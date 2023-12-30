@@ -8,10 +8,20 @@ export const useFollow = () => {
   const { mutate: onFollow } = trpc.follow.useMutation({
     onSuccess: (data) => {
       router.refresh();
-      toast.success(`You are now following ${data.following.username}`);
+      toast.success(`You are now following ${data.following.username}`, {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     },
     onError: () => {
-      toast.error('Something went wrong.');
+      toast.error('Something went wrong.', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     }
   });
   //* Unfollow mutation

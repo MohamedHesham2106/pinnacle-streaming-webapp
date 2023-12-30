@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { TrpcProvider } from '@/components/providers/trpc-provider';
-import { Toaster } from 'sonner';
+import { Toaster } from '@/components/ui/sonner';
 import { dark } from '@clerk/themes';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from '@/components/providers/theme-provider';
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <TrpcProvider>
           <body className={inter.className}>
             <ThemeProvider attribute="class" storageKey="pinnacle-theme">
-              <Toaster theme="light" position="bottom-center" />
+              <Toaster position="bottom-center" />
               {children}
             </ThemeProvider>
           </body>

@@ -37,11 +37,21 @@ export const ConnectModal = () => {
     startTransition(() => {
       createIngress(parseInt(ingressType))
         .then(() => {
-          toast.success('Connection created');
+          toast.success('Connection created', {
+            action: {
+              label: 'Dismiss',
+              onClick: () => toast.dismiss()
+            }
+          });
           closeRef?.current?.click();
         })
         .catch(() => {
-          toast.error('Failed to create connection');
+          toast.error('Failed to create connection', {
+            action: {
+              label: 'Dismiss',
+              onClick: () => toast.dismiss()
+            }
+          });
         });
     });
   };

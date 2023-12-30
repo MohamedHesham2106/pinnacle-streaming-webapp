@@ -36,12 +36,22 @@ export const StreamInfoModal = ({ initialName, initialThumbnailUrl }: IStreamInf
   const [isPending, startTransition] = useTransition();
   const { mutate: updateStream } = trpc.updateStream.useMutation({
     onSuccess: () => {
-      toast.success('Stream info updated');
+      toast.success('Stream info updated', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
       router.refresh();
       closeRef.current?.click();
     },
     onError: () => {
-      toast.error('Something went wrong');
+      toast.error('Something went wrong', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     }
   });
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

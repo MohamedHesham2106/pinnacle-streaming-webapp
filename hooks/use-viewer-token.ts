@@ -28,12 +28,17 @@ export const useViewerToken = (hostId: string) => {
           setName(name);
         }
       } catch {
-        toast.error('Something went wrong.');
+        toast.error('Something went wrong.', {
+          action: {
+            label: 'Dismiss',
+            onClick: () => toast.dismiss()
+          }
+        });
       }
     };
     createToken();
   }, [hostId]);
-  
+
   return {
     viewerToken,
     name,

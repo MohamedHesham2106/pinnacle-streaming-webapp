@@ -13,12 +13,26 @@ import { Chat, ChatSkeleton } from '@/components/stream-player/chat';
 import { Video, VideoSkeleton } from '@/components/stream-player/video';
 import { StreamAboutCard } from './stream-about-card';
 
+type CustomStream = {
+  id: string;
+  name: string;
+  thumbnailUrl: string | null;
+  isChatEnabled: boolean;
+  isChatDelayed: boolean;
+  isChatFollowersOnly: boolean;
+};
+type CustomUser = {
+  id: string;
+  username: string;
+  bio: string | null;
+  stream: CustomStream | null;
+  imageUrl: string;
+  _count: { followedBy: number };
+};
+
 interface IStreamPlayerProps {
-  user: User & {
-    stream: Stream | null;
-    _count: { followedBy: number };
-  };
-  stream: Stream;
+  user: CustomUser;
+  stream: CustomStream;
   isFollowing: boolean;
 }
 export const StreamPlayer = ({ user, stream, isFollowing }: IStreamPlayerProps) => {

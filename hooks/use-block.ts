@@ -8,10 +8,20 @@ export const useBlock = () => {
   const { mutate: OnBlock } = trpc.block.useMutation({
     onSuccess: (data) => {
       router.refresh();
-      toast.success(`Blocked the user ${data.blocked.username}`);
+      toast.success(`Blocked the user ${data.blocked.username}`, {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     },
     onError: () => {
-      toast.error('Something went wrong.');
+      toast.error('Something went wrong.', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     }
   });
   //* Unblock mutation

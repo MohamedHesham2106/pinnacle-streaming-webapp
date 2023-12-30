@@ -19,10 +19,20 @@ export const ToggleCard = ({ field, label, value = false }: IToggleCardProps) =>
   const { mutate } = trpc.updateStream.useMutation({
     onSuccess() {
       router.refresh();
-      toast.success('Chat settings updated!');
+      toast.success('Chat settings updated!', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     },
     onError() {
-      toast.error('Something went wrong');
+      toast.error('Something went wrong', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     }
   });
   const onChange = () => {

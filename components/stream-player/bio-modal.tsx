@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 
-import { Hint } from '@/components/hint';
 import { Textarea } from '@/components/ui/textarea';
 import { useState, useTransition, useRef, ElementRef } from 'react';
 import { trpc } from '@/app/_trpc/client';
@@ -29,12 +28,22 @@ export const BioModal = ({ initialValue }: IBioModalProps) => {
 
   const { mutate: updateBio } = trpc.updateUser.useMutation({
     onSuccess() {
-      toast.success('Bio updated successfully.');
+      toast.success('Bio updated successfully.', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
       router.refresh();
       closeRef.current?.click();
     },
     onError() {
-      toast.error('Failed to update bio');
+      toast.error('Failed to update bio', {
+        action: {
+          label: 'Dismiss',
+          onClick: () => toast.dismiss()
+        }
+      });
     }
   });
 
