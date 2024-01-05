@@ -62,10 +62,41 @@ Welcome to Pinnacle Streaming WebApp, where the virtual world meets real-time en
    cd pinnacle-streaming-webapp
    npm install
    ```
+3. Create .env file
+   
+   ```bash
+   
+   DATABASE_URL=""
 
-3. Run the development server
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+   CLERK_WEBHOOK_SECRET=whsec_
+
+   LIVEKIT_API_URL=
+   LIVEKIT_API_KEY=
+   LIVEKIT_API_SECRET=
+   NEXT_PUBLIC_LIVEKIT_WS_URL=wss://
+
+   UPLOADTHING_SECRET=
+   UPLOADTHING_APP_ID=
+   ```
+
+4. Run the development server
 
    ```bash
    npm run dev
    ```
-4. Explore Pinnacle Streaming WebApp at http://localhost:3000
+5. Explore Pinnacle Streaming WebApp at http://localhost:3000
+
+## Screenshots
+
+ ![Home](image.png)
+ ![StreamOffline](image-1.png)
+ ![StreamOnline](image-2.png)
+ ![EditStream](image-3.png)
+ ![ChatSettings](image-4.png)
+ ![HomeOnline](image-5.png)
