@@ -94,9 +94,9 @@ Welcome to Pinnacle Streaming WebApp, where the virtual world meets real-time en
 
 ## Screenshots
 
- ![Home](image.png)
- ![StreamOffline](image-1.png)
- ![StreamOnline](image-2.png)
- ![EditStream](image-3.png)
- ![ChatSettings](image-4.png)
- ![HomeOnline](image-5.png)
+ ![Home](./screenshots/image.png)
+ ![StreamOffline](./screenshots/image-1.png)
+ ![StreamOnline](./screenshots/image-2.png)
+ ![EditStream](./screenshots/image-3.png)
+ ![ChatSettings](./screenshots/image-4.png)
+ ![HomeOnline](./screenshots/image-5.png)

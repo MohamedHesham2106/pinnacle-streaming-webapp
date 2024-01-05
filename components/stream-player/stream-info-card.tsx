@@ -20,6 +20,7 @@ export const StreamInfoCard = ({
 }: IStreamInfoCardProps) => {
   const hostAsViewer = `host-${hostIdentity}`;
   const isHost = hostAsViewer === viewerIdentity;
+  if (!isHost) return null;
 
   return (
     <div className="px-4">
