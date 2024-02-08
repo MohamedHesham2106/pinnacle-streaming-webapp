@@ -12,7 +12,7 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx,json}\""
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.27.7",
+    "@clerk/nextjs": "^4.29.3",
     "@clerk/themes": "^1.7.9",
     "@livekit/components-react": "^1.5.1",
     "@prisma/client": "^5.7.0",
